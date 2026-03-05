@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-brand">Resume Builder</div>
+        <div class="nav-buttons">
+            <a href="login.html" class="nav-button">Login</a>
+            <a href="register.html" class="nav-button register">Register</a>
+        </div>
+        <div id="nav-profile" class="nav-profile" style="display: none;"></div>
+    </nav>
+
+    <!-- Main Container for the Resume Builder Form -->
+    <div class="resume-form-container">
+        <div class="form-side">
+            <!-- Header Section -->
+            <header class="form-header">
+                <h1>Resume Builder</h1>
+                <p>Fill out your information to create a professional resume.</p>
+            </header>
+
+            <!-- Form Sections -->
+            <form id="resume-form">
+            <!-- Personal Information Section -->
+            <section class="form-section">
+                <h2>Personal Information</h2>
+                <div class="form-group-container">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Rahul Dravid">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="rahul.dravid@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Professional Summary Section -->
+            <section class="form-section">
+                <h2>Professional Summary</h2>
+                <div class="form-group">
+                    <textarea id="summary" name="summary" rows="4" placeholder="Brief overview of your professional background and career goals"></textarea>
+                </div>
+            </section>
+
+            <!-- Work Experience Section -->
+            <section class="form-section">
+                <h2>Work Experience</h2>
+                <div id="experience-container">
+                    <div class="experience-entry">
+                        <div class="form-group">
+                            <label for="job-title">Job Title</label>
+                            <input type="text" name="job-title" placeholder="Software Engineer">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" name="company" placeholder="Tech Company Inc.">
+                        </div>
+                        <div class="form-group date-range">
+                            <div>
+                                <label for="start-date">Start Date</label>
+                                <input type="month" name="start-date">
+                            </div>
+                            <div>
+                                <label for="end-date">End Date</label>
+                                <input type="month" name="end-date">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="current-job" name="current-job">
+                                    <label for="current-job">Current Job</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="job-description">Responsibilities & Achievements</label>
+                            <textarea name="job-description" rows="3" placeholder="• Developed and maintained web applications&#10;• Led a team of 3 developers&#10;• Improved system performance by 40%"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="add-more-btn" id="add-experience">+ Add More Experience</button>
+            </section>
+
+            <!-- Education Section -->
+            <section class="form-section">
+                <h2>Education</h2>
+                <div id="education-container">
+                    <div class="education-entry">
+                        <div class="form-group">
+                            <label for="degree">Degree</label>
+                            <input type="text" name="degree" placeholder="Bachelor of Science in Computer Science">
+                        </div>
+                        <div class="form-group">
+                            <label for="institution">Institution</label>
+                            <input type="text" name="institution" placeholder="University Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="graduation-year">Graduation Year</label>
+                            <input type="month" name="graduation-year">
+                        </div>
+                        <div class="form-group">
+                            <label for="marks">Academic Score</label>
+                            <div class="marks-input-group">
+                                <select name="marks-type" id="marks-type">
+                                    <option value="cgpa">CGPA (0-10)</option>
+                                    <option value="percentage">Percentage (%)</option>
+                                </select>
+                                <input type="text" name="marks" id="marks" placeholder="Enter CGPA or Percentage">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="add-more-btn" id="add-education">+ Add More Education</button>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="form-section">
+                <h2>Skills</h2>
+                <div class="form-group">
+                    <textarea id="skills" name="skills" rows="4" placeholder="Example: HTML, CSS, JavaScript, Problem Solving"></textarea>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="form-section">
+                <h2>Projects</h2>
+                <div id="projects-container">
+                    <div class="project-entry">
+                        <div class="form-group">
+                            <label for="project-name">Project Name</label>
+                            <input type="text" name="project-name" placeholder="E-commerce Website">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-description">Description</label>
+                            <textarea name="project-description" rows="3" placeholder="• Brief description of the project&#10;• Technologies used&#10;• Your role and achievements"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="project-link">Project Link (Optional)</label>
+                            <input type="url" name="project-link" placeholder="https://github.com/yourusername/project">
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="add-more-btn" id="add-project">+ Add More Projects</button>
+            </section>
+
+            <!-- Certifications Section -->
+            <section class="form-section">
+                <h2>Certifications</h2>
+                <div id="certifications-container">
+                    <div class="certification-entry">
+                        <div class="form-group">
+                            <label for="cert-name">Certification Name</label>
+                            <input type="text" name="cert-name" placeholder="AWS Certified Developer">
+                        </div>
+                        <div class="form-group">
+                            <label for="issuing-org">Issuing Organization</label>
+                            <input type="text" name="issuing-org" placeholder="Amazon Web Services">
+                        </div>
+                        <div class="form-group">
+                            <label for="cert-date">Date Obtained</label>
+                            <input type="month" name="cert-date">
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="add-more-btn" id="add-certification">+ Add More Certifications</button>
+            </section>
+
+            <!-- Languages Section -->
+            <section class="form-section">
+                <h2>Languages</h2>
+                <div id="languages-container">
+                    <div class="language-entry">
+                        <div class="form-group">
+                            <label for="language">Language</label>
+                            <input type="text" name="language" placeholder="English">
+                        </div>
+                        <div class="form-group">
+                            <label for="proficiency">Proficiency Level</label>
+                            <select name="proficiency">
+                                <option value="native">Native</option>
+                                <option value="fluent">Fluent</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="basic">Basic</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="add-more-btn" id="add-language">+ Add More Languages</button>
+            </section>
+
+            <!-- LinkedIn Section -->
+            <section class="form-section">
+                <h2>Professional Profile</h2>
+                <div class="form-group">
+                    <label for="linkedin">LinkedIn Profile</label>
+                    <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourusername">
+                </div>
+            </section>
+        </form>
+
+        <!-- Submit Button Section -->
+        <div class="button-container">
+            <button type="button" class="generate-button">
+                Generate
+            </button>
+            <button type="button" class="download-button" id="download-resume" style="display: none;">
+                Download Resume
+            </button>
+        </div>
+        
+    </div>
+
+    <!-- Link to the JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
